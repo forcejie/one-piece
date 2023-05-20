@@ -1,13 +1,17 @@
 <template>
-  <div class="home">
-    <el-button>Default</el-button>
-    <el-button type="primary">Primary</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
+  <div class="app">
+    <navbar></navbar>
+    <router-view />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import navbar from "../src/components/navbar/navbar.vue"
+</script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+// .app {
+//   height: 100vh;
+//   width: 100wh;
+// }
+</style>
