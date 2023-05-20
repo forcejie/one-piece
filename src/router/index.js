@@ -18,7 +18,13 @@ const routes = [
   },
   {
     path: "/blog",
-    component: () => import("../views/blog/blog.vue")
+    component: () => import("../views/blog/blog.vue"),
+    children: [
+      {
+        path: "/articlesDetail",
+        component: () => import("../views/blog/cpns/articles-detail.vue")
+      }
+    ]
   },
   {
     path: "/discuss",
@@ -31,6 +37,10 @@ const routes = [
   {
     path: "/about",
     component: () => import("../views/adout/about.vue")
+  },
+  {
+    path: "/articlesEditor",
+    component: () => import("../views/blog/cpns/articles-editor.vue")
   }
 ]
 

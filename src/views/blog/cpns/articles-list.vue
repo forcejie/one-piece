@@ -132,7 +132,7 @@ const listData = [
   background-color: #f8f7f7;
   .article-list {
     width: 50%;
-    margin: auto;
+    margin-left: 200px;
     background-color: #fff;
     &-item {
       border-bottom: 1px solid rgba(178, 186, 194, 0.15);
