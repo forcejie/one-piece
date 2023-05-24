@@ -59,32 +59,8 @@
         </el-menu>
       </el-col>
       <el-col :span="4">
-        <div class="info">
-          <el-dropdown>
-            <span class="user-info">
-              <el-avatar
-                :size="28"
-                src="https://upload.jianshu.io/users/upload_avatars/1102036/c3628b478f06.jpeg"
-              />
-              <span class="name">coderwhy</span>
-            </span>
-            <template #dropdown>
-              <el-dropdown-menu>
-                <el-dropdown-item @click="handleExitClick">
-                  <el-icon><CircleClose /></el-icon>
-                  <span>退出系统</span>
-                </el-dropdown-item>
-                <el-dropdown-item divided>
-                  <el-icon><InfoFilled /></el-icon>
-                  <span>个人信息</span>
-                </el-dropdown-item>
-                <el-dropdown-item>
-                  <el-icon><Unlock /></el-icon>
-                  <span>修改密码</span>
-                </el-dropdown-item>
-              </el-dropdown-menu>
-            </template>
-          </el-dropdown>
+        <div class="user">
+          <user-info></user-info>
         </div>
       </el-col>
     </el-row>
@@ -93,12 +69,13 @@
 
 <script setup>
 import { ref } from "vue"
-
+import UserInfo from "./cpns/user-info.vue"
 const activeIndex = ref("main")
 </script>
 
 <style lang="less" scoped>
 .navbar {
+  position: relative;
   background-color: #fff;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   height: 60px;
@@ -124,6 +101,7 @@ const activeIndex = ref("main")
   .nav-menu {
     font-size: 16px;
     margin-right: 20px;
+
     .el-menu-item {
       padding: 0 20px;
       .el-menu-item--active {
@@ -131,5 +109,16 @@ const activeIndex = ref("main")
       }
     }
   }
+  .user {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    :focus-visible {
+      outline: none;
+    }
+  }
+}
+:deep(.el-menu--horizontal) {
+  border-bottom: none;
 }
 </style>
